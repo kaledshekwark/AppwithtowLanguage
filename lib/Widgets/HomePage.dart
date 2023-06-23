@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutterwithappenglishandarabic/AppLocalizations.dart';
+import 'package:flutterwithappenglishandarabic/Widgets/SettingPage.dart';
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("title-M".tr(context)),
+        actions: [
+          IconButton(onPressed: () => Navigator.of(context).push(
+              MaterialPageRoute(builder: (ctx) =>  SettingPage())),
+              icon: const Icon(Icons.settings))
+        ],
+
+      ),
       drawer: Drawer(),
       body:Center(
         child: Padding(
@@ -15,7 +24,7 @@ class HomePage extends StatelessWidget {
               mainAxisSize: MainAxisSize.min,
               children:
               [
-                Text(AppLocalizations.of(context)!.translate("hello-M") ,style: TextStyle(color:Colors.cyan ),textAlign:TextAlign.center,)
+                Text("hello-M".tr(context) ,style: TextStyle(color:Colors.cyan ),textAlign:TextAlign.center,)
                 ,Text("This Text will not be Translated!" ,style: TextStyle(color:Colors.cyan ),textAlign:TextAlign.center,)
 
 

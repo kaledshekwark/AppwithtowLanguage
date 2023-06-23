@@ -44,3 +44,11 @@ class _AppLocalizations extends LocalizationsDelegate<AppLocalizations>{
   bool shouldReload(covariant LocalizationsDelegate<AppLocalizations> old)
   =>false;
 }
+ extension TranslateX on String {
+
+ String tr( BuildContext context)
+ {
+    return AppLocalizations.of(context)!.translate(this);
+ }
+
+ }
